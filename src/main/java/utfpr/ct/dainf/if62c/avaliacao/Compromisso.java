@@ -6,15 +6,15 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * IF62C Fundamentos de Programação 2
- * Avaliação parcial.
- * @author 
+ * IF62C Fundamentos de Programação 2 Avaliação parcial.
+ *
+ * @author
  */
 public class Compromisso {
+
     private Date data;
     private String descricao;
     private final List<Aviso> avisos = new ArrayList<>();
-    
     private final SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
 
     public Compromisso(Date data, String descricao) {
@@ -41,14 +41,17 @@ public class Compromisso {
     public List<Aviso> getAvisos() {
         return avisos;
     }
-    
+
     public void registraAviso(Aviso aviso) {
         avisos.add(aviso);
     }
-    
+
+    public void removeAviso(Aviso aviso) {
+        avisos.remove(aviso);
+    }
+
     @Override
     public String toString() {
         return dateFormat.format(data) + ": " + descricao;
     }
-
 }
